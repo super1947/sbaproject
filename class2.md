@@ -23,4 +23,54 @@ titanic 폴더에
 dataset (test.csv, train.csv)가 존재하고
 entity(속성) + service(기능) = 객체(object)
 
-def **init**(self, ...)
+def **init**(self, ...) -> 속성
+def abc(): -> 기능
+결국 class는 객체를 정의하는 것
+
+class가 여러 개 (entity, service) 모여서 다시 큰 개념의 객체를 이룬다.
+그때 이것은 클래스라 하지 않고 model이라고 한다.
+
+패키지는 같은 컨셉을 공유하는 클래스의 집합..
+모델에 AI 개념이 없으면 web에서 말하는 모델이고
+AI 개념이 존재하면 인공지능 모델이 된다.
+
+여기서 AI 개념이라고 하면 머신러닝(기계학습) 코딩의 유무..
+dataset을 추가하면 이를 지도학습이라고 함
+dataset이 없으면 비지도학습이라고 함
+지금 타이타닉은 dataset을 모델에 넣었으므로 지도학습을 하겠다는 의미
+
+# 외부에 있는 파이썬 파일을 import 해야 속성, 기능을 사용할 수 있다.
+
+# 내부에서는 이것을 인스턴스화 해야 한다. entity = Entity()
+
+# entity는 인스턴스화 된 객체, Entity는 클래스, Entity()는 생성자
+
+# 결론 : 객체지향에서는 속성과 기능을 호출하는 구조로 두 가지 방식이 있는데,
+
+        calc = Calculator()가 있다고 하면
+        calc는 인스턴스 객체가 되고
+        Calculator는 클래스 객체(스태틱)라고 한다.
+        calc.sum()하면 인스턴스 호출방식 = dynamic
+        Calculator.sum() 하면 클래스 호출방식 = static
+
+from titanic.entity import Entity
+from titanic.service import Service
+
+class Controller:
+def **init**(self):
+self.entity = Entity()
+self.service = Service()
+
+=====================================================================
+
+페이로드 (컴퓨팅)
+
+this.fname = payload -> setter 할당연산자(=) 있으면 setter
+this.fname 만 있으면 -> getter 할당연산자(=) 없으면 getter
+
+- PassengerId,Pclass,Name,Sex,Age,SibSp,Parch,Ticket,Fare,Cabin,Embarked
+  -> 메타데이터, Schema, features, variables, properties
+
+- 1,0,3,"Braund, Mr. Owen Harris",male,22,1,0,A/5 21171,7.25,,S
+- 2,1,1,"Cumings, Mrs. John Bradley (Florence Briggs Thayer)",female,38,1,0,PC 17599,71.2833,C85,C
+  -> row, instance, raw data
