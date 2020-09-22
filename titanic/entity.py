@@ -12,12 +12,12 @@ class Entity:
     #     self.label = label
     #     self._context = context
 
-    context: str
-    fname: str
-    train: object
-    test: object
-    id: str
-    label: str
+    context: str = '/Users/hong/Desktop/sbaproject/data/'
+    fname: str = ''
+    train: object = None
+    test: object = None
+    id: str = ''
+    label: str = ''
 
 # contest get, set을 만듭니다.
 

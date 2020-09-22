@@ -1,26 +1,31 @@
-from service import Service
-from entity import Entity
+import sys
+sys.path.insert(0, '/Users/hong/Desktop/sbaproject')
+sys.setrecursionlimit(10000)
+from titanic.entity import Entity
+from titanic.service import Service
 
 
 class Controller:
     def __init__(self):
+        print('TEST')
         self.entity = Entity()
         self.service = Service()
-        print('hello')
 
     def preprocessing(self, train, test):
         service = self.service
         this = self.entity
-        this.train = service.new_model(train)  # payload
-        this.test = service.new_model(test)
+        this.train = service.new_model(train) # payload
+        this.test = service.new_model(test) # payload
+        return this
 
     def modeling(self, train, test):
         service = self.service
         this = self.preprocessing(train, test)
-        print(f'훈련컬럼 : {this.train.columns}')
+        print(f'훈련 컬럼 : {this.train.columns}')
         this.label = service.create_label(this)
         this.train = service.create_train(this)
         return this
+        
 
     def learning(self):
         pass
@@ -30,7 +35,5 @@ class Controller:
 
 
 if __name__ == '__main__':
-    Controller()
-
-    # ctrl = Controller()
-    # c = ctrl.modeling('train.csv', 'test.csv')
+    ctrl = Controller()
+    ctrl.modeling('train.csv','test.csv')
