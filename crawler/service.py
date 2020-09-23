@@ -45,7 +45,6 @@ class Service:
         myfile = open(filename, mode='wb')
         myfile.write(image_file.read())
         myfile.close()
-        print('이미지 저장 완료')
 
     # 웹툰 리스트를 만들고 이미지 파일을 저장
     def create_webtoon_list(self, soup, myfolder, weekday_dict):
@@ -79,6 +78,5 @@ class Service:
     def save_csv_file(self, mylist, filename):
         mycolumns = ['타이틀 번호', '요일', '제목', '링크']
         myframe = DataFrame(mylist, columns=mycolumns)
-        self.filename = filename
         myframe.to_csv(filename, encoding='utf-8', index=False)
         print('csv 저장 완료')
