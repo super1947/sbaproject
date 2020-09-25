@@ -74,3 +74,39 @@ this.fname 만 있으면 -> getter 할당연산자(=) 없으면 getter
 - 1,0,3,"Braund, Mr. Owen Harris",male,22,1,0,A/5 21171,7.25,,S
 - 2,1,1,"Cumings, Mrs. John Bradley (Florence Briggs Thayer)",female,38,1,0,PC 17599,71.2833,C85,C
   -> row, instance, raw data
+
+  현재 크롤링은 정해진 url만 처리. -> static
+
+  dynamic은 payload로 url을 주면
+  재활용해서 서로 다른 결과를 만들 수 있다.
+
+  ====================================================================
+
+  MVC 코딩 하는 순서
+
+  구조를 만든다.
+  1. model -> view -> controller로 연결(network) 한다.
+  model = entity + service 속성 + 기능 -> 모델객체
+  
+
+  =======================================================================
+
+  Data 수집
+  - 방법론
+  - 정형 (csv) = 스키마구조가 존재하는 것 = Computer 인식
+  - 비정형 (웹, 문서)= 스키마구조가 존재하지 않는 것 = Computer 인식불가
+      
+  Data 정제, 정형화
+  Modeling
+  Learning
+  Machine
+  Evaluation
+
+
+정규 표현식 re
+? : unique
+* : null 허용 (all)
++ : not null
+{n} : counting
+
+

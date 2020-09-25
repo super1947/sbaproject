@@ -1,0 +1,2 @@
+model_checkpoint_path: "/users/hong/desktop/sbaproject/cabbage/data/saved_model.ckpt"
+all_model_checkpoint_paths: "/users/hong/desktop/sbaproject/cabbage/data/saved_model.ckpt"

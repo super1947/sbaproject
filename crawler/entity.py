@@ -1,7 +1,7 @@
-from dataclasses import dataclass
+# from dataclasses import dataclass
 
 
-@dataclass
+# @dataclass
 class Entity:
     url: str = ''
     parser: str = ''
