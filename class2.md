@@ -109,4 +109,15 @@ this.fname 만 있으면 -> getter 할당연산자(=) 없으면 getter
 + : not null
 {n} : counting
 
+1. 개발환경 설정 -> context complete!!
+1.1 Model 개발환경 완료
+1.2 View 개발환경 완료
+1.3 Controller 개발환경
+
+
+STEP 2의 목표
+1. Model : Python OOP에서 reuse를 고민합니다.
+2. View : React 
+
+
 

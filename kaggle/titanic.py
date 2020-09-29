@@ -8,9 +8,11 @@ from sklearn.svm import SVC  # svm
 from sklearn.model_selection import train_test_split
 from sklearn.model_selection import KFold  # k값은 count 로 의미로 이해
 from sklearn.model_selection import cross_val_score
-from util.file_handler import FileReader
+import os
 import sys
-sys.path.insert(0, '/Users/hong/Desktop/sbaproject')
+sys.path.append(os.path.dirname(os.path.abspath(os.path.dirname(__file__))))
+basedir = os.path.dirname(os.path.abspath(__file__))
+from util.file_handler import FileReader
 # from service import Service
 
 
@@ -34,14 +36,18 @@ Embarked 승선한 항구명 C = 쉐브루, Q = 퀸즈타운, S = 사우스햄�
 
 
 class Service:
-    def __init__(self, context):
+    context = '/Users/hong/Desktop/sbaproject/kaggle/data/'
+
+    def __init__(self):
         self.FileReader = FileReader()
+        self.kaggle = os.path.join(basedir, 'kaggle')
+        self.data = os.path.join(self.kaggle, 'data')
 
     def new_model(self, payload) -> object:
         this = self.FileReader
-        this.context = '/Users/hong/Desktop/sbaproject/kaggle/data/'
+        this.data = self.data
         this.fname = payload
-        return pd.read_csv(this.context + this.fname)  # p.139  df = tensor
+        return pd.read_csv(self.context + this.fname)  # p.139  df = tensor
 
     @staticmethod
     def create_train(this) -> object:
@@ -285,7 +291,7 @@ class Controller:
         clf.fit(this.train, this.label)
         prediction = clf.predict(this.test)
         pd.DataFrame({'PassengerId': this.id, 'Survived': prediction}).to_csv(
-            this.context + 'submision.csv', index=False)
+            Service().context + 'submision.csv', index=False)
 
 
 if __name__ == '__main__':
